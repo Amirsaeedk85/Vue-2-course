@@ -10,14 +10,18 @@
   </head>
   <body>
     <div id="app">
-      <div v-bind:title="randNum " v-if="shown">Hover Over Me</div>
+      <button class="vue-btn" @click="reveal">Reveal the secret number</button>
     </div>
     <script>
       var app = new Vue({
         el: "#app",
         data: {
-          randNum: Math.floor(Math.random() * 50 + 1),
-          shown: false,
+          secretNumber: Math.floor(Math.random() * 50) + 1,
+        },
+        methods: {
+          reveal() {
+            alert(`Here is the secret number: ${this.secretNumber}`);
+          },
         },
       });
     </script>
