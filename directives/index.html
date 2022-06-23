@@ -8,12 +8,15 @@
     <title>Vue App</title>
   </head>
   <body>
-    <div id="app">{{text}}</div>
+    <div id="app">
+      <div v-bind:title="randNum " v-if="shown">Hover Over Me</div>
+    </div>
     <script>
       var app = new Vue({
         el: "#app",
         data: {
-          text: "Hello World",
+          randNum: Math.floor(Math.random() * 50 + 1),
+          shown: false,
         },
       });
     </script>
